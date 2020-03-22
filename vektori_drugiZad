@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
+using namespace std;
+
+int main () {
+	string R;
+	int x;
+	int y=1;
+	
+	cout<<"Program koji broji rijeci u recenici i dodaje zareze!"<<endl;
+	cout<<"Unesi recenicu: ";
+	getline (cin,R);
+	
+	cout<<endl; 
+	
+	cout<<"Recenica kojoj cemo dodati zareze: ";
+	for (x=0; R[x]!='\0'; x++)
+	{
+		cout<<R[x];
+	}
+	
+	cout<<endl;
+	cout<<endl;
+	
+	for (x=0; R[x]!='\0'; x++)
+	{
+		if (R[x]==' ')
+		{
+			y++;
+		}
+	}
+	
+	cout<<"Recenica ima "<<y<<" rijeci."<<endl;
+	
+		for (x=0; R[x]!='\0'; x++)
+	{
+		if (R[x]==' ')
+		{
+			R[x]=',';
+		}	
+	}
+	cout<<endl;
+	
+	cout<<"Recenica sa zarezima: "<<R<<endl;
+	cout<<endl;
+	
+	system("pause");
+	return 0;
+}
