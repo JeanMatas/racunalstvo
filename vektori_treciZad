@@ -1,0 +1,43 @@
+#include <vector> 
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	int N=1;
+	int x=1;
+	int i, j;
+	vector<int> v1;
+	
+	cout<<"Program koji ispisuje brojeve koji se ponavljaju!"<<endl;
+	cout<<"Unesite brojeve, za kraj unesite nulu!"<<endl;
+	cout<<endl;
+	
+	while(N!=0)
+	{
+		cout<<"Unesi "<<x<<". broj: ";
+		cin>>N;
+		v1.push_back(N);
+		x++;
+	}
+	cout<<endl;
+	
+	cout << "Brojevi koji se ponavljaju su: " <<endl;
+	for (i=0;  i<v1.size(); i++) {
+		for (j=i+1;  j<v1.size(); j++)
+		{
+			if (v1[i]==v1[j])
+			{
+				cout<<v1[j]<<" ";
+				break;
+			}
+			
+		}
+	} 
+	cout<<endl;
+	
+	system("pause");
+	return 0;
+}
