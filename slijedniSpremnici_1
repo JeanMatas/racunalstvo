@@ -1,0 +1,82 @@
+#include <cstdlib>
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	vector<int> RT;
+	float y;
+	int x=0;
+	
+	cout<<"Program koji ispisuje brojeve dok ne unesete nulu!"<<endl;
+	cout<<"Unesi broj: ";
+	cin>>y;
+	cout<<endl;
+	
+	while ((y!=0))
+	{
+		if (y!=int(y))
+		{
+			cout<<"Unesi ponovno."<<endl;
+			cin>>y;
+		}
+		else
+		{
+			cout<<"Unesi ponovno dok ne bude nula."<<endl;
+			RT.push_back(y);
+			cin>>y;
+		}
+ 	}
+ 	
+ 	RT.push_back(y);
+ 	cout<<endl;
+	cout<<"Brojevi su: ";
+	cout<<endl;
+	
+	for (vector<int>::iterator it=RT.begin(); it!=RT.end(); it++)
+	{
+		cout<<*it<<" ";
+		if (RT.size())
+		{
+			x++;
+		}
+	}
+	
+	cout<<endl;
+	cout<<"U ovom vektoru ima "<<x<<" brojeva"<<endl;
+	cout<<endl;
+	
+	cout<<"Kapacitet ovih brojeva je: "<<RT.capacity()<<endl;
+	
+	cout<<endl;
+	
+	cout<<"Nakon sortiranja, brojevi izgledaju ovako: ";
+	sort (RT.begin(), RT.end());
+	
+	for (vector<int>::iterator it=RT.begin(); it!=RT.end(); it++)
+	{
+		cout<<*it<<" ";
+	}
+	
+	cout<<endl;
+	cout<<endl;
+	cout<<"Najmanji broj je: "<<*min_element(RT.begin(), RT.end())<<endl;
+	cout<<"Najveci broj je: "<<*max_element(RT.begin(), RT.end())<<endl;
+	cout<<endl;
+	
+	vector<int>::iterator ip;
+	ip=unique(RT.begin(), RT.end());
+	RT.resize(distance(RT.begin(), ip));
+	
+	cout<<"Brojevi bez ponavljanja su: ";
+	for (ip=RT.begin(); ip!=RT.end(); ip++)
+	{
+		cout<<*ip<<" ";
+	}
+	cout<<endl; 
+	
+	system("Pause");
+	return 0;
+}
