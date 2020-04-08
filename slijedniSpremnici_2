@@ -1,0 +1,60 @@
+#include <cstdlib>
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	vector<int> RT;
+	float y;
+	int x=0;
+	
+	cout<<"Program koji ispisuje brojeve dok ne unesete nulu."<<endl;
+	cout<<"Unesi broj: "<<endl;
+	cin>>y;
+	cout<<endl;
+	
+	while ((y!=0))
+	{
+		if (y!=int(y))
+		{
+			cout<<"Unesi ponovno cijeli broj."<<endl;
+			cin>>y;
+		}
+		else
+		{
+			cout<<"Unesi ponovno dok ne bude nula."<<endl;
+			RT.push_back(y);
+			cin>>y;
+		}
+ 	}
+ 	RT.push_back(y);
+ 	cout<<endl;
+	cout<<"Vasi brojevi su: "<<endl;
+	for (vector<int>::iterator it=RT.begin(); it!=RT.end(); it++)
+	{
+		cout<<*it<<" ";
+		if (RT.size())
+		{
+			x++;
+		}
+	}
+	
+	cout<<endl;
+	cout<<"U ovom vektoru ima "<<x<<" brojeva"<<endl;
+	cout<<endl;
+	cout<<"Kapacitet ovih brojeva je: "<<RT.capacity()<<endl;
+	cout<<endl;
+	cout<<"Nakon sortiranja, brojevi izgledaju ovako: "<<endl;
+	sort (RT.begin(), RT.end());
+	
+	for (vector<int>::iterator it=RT.begin(); it!=RT.end(); it++)
+	{
+		cout<<*it<<" ";
+	}
+	
+	cout<<endl;
+	system("pause");
+	return 0;
+}
