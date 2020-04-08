@@ -1,2 +1,0 @@
-# racunalstvo
-zadaci iz cpp
