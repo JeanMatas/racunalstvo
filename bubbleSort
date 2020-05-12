@@ -1,0 +1,38 @@
+#include<iostream>										//Bubble sort program - Jean Matas 3.e2
+
+using namespace std;
+
+int main() {
+    int n;												//
+    cout<<"Unesite koliko brojeva zelite imati: ";		//Korisnik upisuje koliko brojeva 
+    cin>>n;												//		zeli imati u nizu!
+    int niz[n],i,j;										//
+    
+    cout<<"Unesite brojeve:\n";							//
+	for(i=0; i<n; i++) {								//Korisnik upisuje vrijednosti niza!
+        cin>>niz[i];									//
+    }													//
+    
+
+    for(i=0; i<n-1; i++)								//Sortiramo niz!
+    {
+        for(j=0; j<n-i-1; j++)
+        {
+            if(niz[j]>niz[j+1])							//Provjeravamo je'li prethodna vrijednost
+            {											//			veca od nove!
+                int temp=niz[j];						//Varijabla temp (temporary) PRIVREMENO 
+                niz[j]=niz[j+1];						//zadrzava vrijednosti niza (niz[j])!
+                niz[j+1]=temp;							//Zamjenjujemo vrijednosti!
+            }
+        }
+    }
+    
+    cout<<endl;
+    cout<<"Sortirani niz:\n";							//Ispisujemo sortirani niz!
+    for(i=0; i<n; i++)									//for petlja - ispisuje vrijednosti po redu (sortira ih)
+    cout<<niz[i]<<" ";									//(" ") - stavljamo razmak izmedu vrijednosti!
+    cout<<endl;
+
+    system("pause");
+    return 0;
+}
