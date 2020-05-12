@@ -1,0 +1,42 @@
+#include <iostream> 								// Selection Sort program - Jean Matas 3.e2
+
+using namespace std; 
+
+	int zamj(int *a, int *b) { 
+	int temp=*a; 
+	*a=*b; 
+	*b=temp; 
+} 
+
+	int selectionSort(int niz[], int n) { 
+	int i, j, najmanjiBroj; 
+	
+	for (i=0; i<n-1; i++) { 						//
+		najmanjiBroj=i; 							//
+		for (j=i+1; j<n; j++) 						//Ovim dijelom koda pronalazimo najmanji broj
+		if (niz[j]<niz[najmanjiBroj]) 				//			PRIJE sortiranja!
+			najmanjiBroj=j; 						//
+			
+	zamj(&niz[najmanjiBroj], &niz[i]);				//Zamjenjujemo najmanji broj s prvim!
+	} 
+} 
+
+	int ispis(int niz[], int duljina) {				//
+	int i; 											//
+	for (i=0; i<duljina; i++) 						//Funckija kojom ispisujemo rezultat!
+		cout<<niz[i]<<" "; 							//
+	cout<<endl; 									//
+} 								
+
+	int main() { 									//
+	int niz[10] = {90,45,2,17,5,27,19,50,40,2002};  //
+	int n=sizeof(niz)/sizeof(niz[0]); 				//Glavni kod (main), unosimo prije napisane funkcije (ispis, selectionSort)
+	selectionSort(niz, n); 							//i sortiramo rezultat
+	cout<<"Sortirani niz: \n"; 						//
+	ispis(niz, n); 									//
+	
+	system("pause");
+	return 0;
+} 
+
+
